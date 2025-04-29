@@ -1,139 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name | Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rumesha Riaz | Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <script>
+    emailjs.init('rumeshariazsrg@gmail.com');
+  </script>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    /* Fixed header */
+    header { 
+      position: fixed; 
+      top:0; 
+      width:100%; 
+      z-index:1000;
+      background-color:rgba(0,0,0,0.8); 
+      backdrop-filter:blur(10px); 
+    }
+    .nav-links a {
+      color: white !important;
+    }
+    .logo {
+      color: white !important;
+    }
+    .burger div {
+      background-color: white !important;
+    }
+    #home { margin-top:80px; }
+    
+    /* Content cards */
+    .content-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      margin-bottom: 2rem;
+    }
+    
+    /* Video bg */
+    .video-background { 
+      position:fixed; 
+      top:0; 
+      left:0;
+      width:100%; 
+      height:100%; 
+      z-index:-1; 
+      overflow:hidden; 
+    }
+    .video-background video { 
+      min-width:100%; 
+      min-height:100%; 
+      object-fit:cover; 
+    }
+    .video-overlay { 
+      position:absolute; 
+      top:0; 
+      left:0;
+      width:100%; 
+      height:100%; 
+      background:rgba(0,0,0,0.5); 
+    }
+    /* Popup */
+    .popup-message {
+      position: fixed; 
+      bottom:20px; 
+      left:50%; 
+      transform:translateX(-50%);
+      background:#28a745; 
+      color:#fff; 
+      padding:10px 20px; 
+      border-radius:5px;
+      display:none; 
+      z-index:1001;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">YourName</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="burger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
-        </nav>
-    </header>
+  <!-- Video Background -->
+  <div class="video-background">
+    <video autoplay muted loop playsinline id="bg-video">
+      <source src="assets/background.mp4" type="video/mp4">
+    </video>
+    <div class="video-overlay"></div>
+  </div>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Hi, I'm <span class="highlight">Your Name</span></h1>
-            <h2>Frontend Developer</h2>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-            </div>
-            <a href="#contact" class="cta-button">Get In Touch</a>
+  <!-- Header & Nav -->
+  <header>
+    <nav>
+      <div class="logo">Rumesha Riaz</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="burger">
+        <div class="line1"></div><div class="line2"></div><div class="line3"></div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="content-card" style="display: flex; align-items: center; gap: 14rem;background: rgba(0, 0, 0, 0.7); color: rgb(160, 156, 156);">
+      <div class="hero-content">
+        <h1>Hi, I'm <span class="highlight">Rumesha Riaz</span></h1>
+        <h2>React Native Developer</h2>
+        <div class="social-icons" >
+          <a href="https://github.com/RumeshaRiaz"><i class="fab fa-github"style="color: white;"></i></a>
+          <a href="https://www.linkedin.com/in/rumesha-riaz-84484423b/"><i class="fab fa-linkedin" style="color: white;"></i></a>
         </div>
-        <div class="hero-image">
-            <img src="assets/your-image.png" alt="Your Name">
+        <a href="#contact" class="cta-button">Get In Touch</a>
+      </div>
+      <div class="hero-image">
+        <img src="assets/my-image.jpeg" alt="Rumesha Riaz" style="width: 250px; height: 250px; object-fit: cover; border-radius: 50%; border: 5px solid var(--primary-color);"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="about-section">
+    <div class="content-card" style="background: rgba(0, 0, 0, 0.7);color: white;">
+      <h2 class="section-title" style="color: white;">About Me</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>I am a React Native Developer with a foundation in JavaScript, React Native, and React. I build scalable, cross-platform mobile apps and web apps, integrate RESTful APIs, manage backends with Node.js & Express, and work with PostgreSQL & MySQL.</p>
+          <p>I value teamwork, agile methodologies, and continuous learning. Outside of coding, I enjoy visual arts & interior styling.</p>
+          <a href="https://drive.google.com/file/d/1lMpONd5AS3kZik--wquXFD_PAaIB4XIT/view?usp=sharing" class="resume-button">Download Resume</a>
         </div>
-    </section>
-
-    <section id="about" class="about-section">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-content">
-            <div class="about-text">
-                <p>I'm a passionate frontend developer with experience in creating beautiful and functional websites. I love turning ideas into reality through code.</p>
-                <p>When I'm not coding, you can find me hiking, reading, or exploring new technologies.</p>
-                <div class="about-buttons">
-                    <a href="#" class="resume-button">Download Resume</a>
-                </div>
-            </div>
-            <div class="about-skills">
-                <div class="skill-item">
-                    <span>HTML/CSS</span>
-                    <div class="skill-bar"><div class="skill-level html-css"></div></div>
-                </div>
-                <div class="skill-item">
-                    <span>JavaScript</span>
-                    <div class="skill-bar"><div class="skill-level javascript"></div></div>
-                </div>
-                <div class="skill-item">
-                    <span>UI/UX Design</span>
-                    <div class="skill-bar"><div class="skill-level design"></div></div>
-                </div>
-            </div>
+        <div class="about-skills">
+          <div class="skill-item"><span>React Native App Development</span>
+            <div class="skill-bar"><div class="skill-level" style="width:85%"></div></div>
+          </div>
+          <div class="skill-item"><span>Andriod Development</span>
+            <div class="skill-bar"><div class="skill-level" style="width:75%"></div></div>
+          </div>
+          <div class="skill-item"><span>Web Development</span>
+            <div class="skill-bar"><div class="skill-level" style="width:75%"></div></div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section id="skills" class="skills-section">
-        <h2 class="section-title">My Skills</h2>
-        <div class="skills-container">
-            <div class="skill-card">
-                <i class="fas fa-code"></i>
-                <h3>Frontend Development</h3>
-                <p>HTML, CSS, JavaScript, Responsive Design</p>
-            </div>
-            <div class="skill-card">
-                <i class="fas fa-paint-brush"></i>
-                <h3>UI/UX Design</h3>
-                <p>Wireframing, Prototyping, User Research</p>
-            </div>
-            <div class="skill-card">
-                <i class="fas fa-mobile-alt"></i>
-                <h3>Mobile Friendly</h3>
-                <p>Responsive layouts that work on any device</p>
-            </div>
+  <!-- Skills -->
+  <section id="skills" class="skills-section">
+    <div class="content-card" style="background: rgba(0, 0, 0, 0.7);color: white;">
+      <h2 class="section-title" style="color: white;">My Skills</h2>
+      <div class="skills-container" >
+        <div class="skill-card"style="background: rgba(0, 0, 0, 0.7);color: white;"><i class="fas fa-mobile-alt"></i>
+          <h3>Mobile Development</h3>
+          <p>React Native, Expo, Navigation, Hooks, Context API, Styled Components</p>
         </div>
-    </section>
-
-    <section id="projects" class="projects-section">
-        <h2 class="section-title">My Projects</h2>
-        <div class="projects-container">
-            <div class="project-card">
-                <img src="assets/project1.jpg" alt="Project 1">
-                <div class="project-info">
-                    <h3>Project Title 1</h3>
-                    <p>Short description of the project and technologies used.</p>
-                    <div class="project-links">
-                        <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                        <a href="#"><i class="fab fa-github"></i> Code</a>
-                    </div>
-                </div>
-            </div>
-            <!-- More project cards -->
+        <div class="skill-card" style="background: rgba(0, 0, 0, 0.7);color: white;"><i class="fas fa-code"></i>
+          <h3>Web Development</h3>
+          <p>React, Node.js, Express, REST APIs, PostgreSQL, MySQL, MVC</p>
         </div>
-    </section>
-
-    <section id="contact" class="contact-section">
-        <h2 class="section-title">Get In Touch</h2>
-        <div class="contact-container">
-            <div class="contact-info">
-                <h3>Contact Information</h3>
-                <p><i class="fas fa-envelope"></i> your.email@example.com</p>
-                <p><i class="fas fa-phone"></i> +1 (123) 456-7890</p>
-                <div class="contact-social">
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-            <form class="contact-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
+        <div class="skill-card"style="background: rgba(0, 0, 0, 0.7);color: white;"><i class="fas fa-database"></i>
+          <h3>Backend & Integration</h3>
+          <p>API Integration, Axios/Fetch, JSON, Flask (Python)</p>
         </div>
-    </section>
+        <div class="skill-card"style="background: rgba(0, 0, 0, 0.7);color: white;"><i class="fas fa-pencil-ruler"></i>
+          <h3>UI/UX & Tools</h3>
+          <p>Custom UI Components, Responsive Layouts, Git, Figma</p>
+        </div>
+        <div class="skill-card"style="background: rgba(0, 0, 0, 0.7);color: white;"><i class="fas fa-terminal"></i>
+          <h3>Programming Languages</h3>
+          <p>JavaScript, Python, Java, C++, R, C#, Haskell</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        <p>&copy; 2023 Your Name. All rights reserved.</p>
-    </footer>
+  <!-- Projects -->
+  <section id="projects" class="projects-section">
+    <div class="content-card" style="background: rgba(0, 0, 0, 0.7); color: white;">
+      <h2 class="section-title" style="color: white;">My Projects</h2>
+      <div class="projects-container" >
+        <div class="project-card" style="background: rgba(0, 0, 0, 0.7); color: white;">
+          <img src="assets/parents.avif" alt="ProgParenta" style="height: 180px;"/>
+          <div class="project-info">
+            <h3>ProgParenta (FYP)</h3>
+            <p>Web & mobile app for parents, students, and teachers. Real-time tracking, predictive analytics, multilingual support.</p>
+            <div class="project-tags">
+              <span class="tag">React Native</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Express</span>
+              <span class="tag">ML</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card" style="background: rgba(0, 0, 0, 0.7); color: white;">
+          <img src="assets/project.jpeg" alt="Project Management App" style="height: 180px;"/>
+          <div class="project-info">
+            <h3>Project Management App</h3>
+            <p>Trello-like React Native app with task boards, drag-drop & real-time collaboration.</p>
+            <div class="project-tags">
+              <span class="tag">React Native</span>
+              <span class="tag">PostgreSQL</span>
+              
+            </div>
+          </div>
+        </div>
+        <div class="project-card"style="background: rgba(0, 0, 0, 0.7); color: white;">
+          <img src="assets/song.jpeg" alt="MoodSongRecommender" style="height: 180px;"/>
+          <div class="project-info">
+            <h3>MoodSongRecommender</h3>
+            <p>React Native app suggesting music by mood via a trained model & Flask backend.</p>
+            <div class="project-tags">
+              <span class="tag">React Native</span>
+              <span class="tag">Python</span>
+              <span class="tag">Flask</span>
+              <span class="tag">ML</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card"style="background: rgba(0, 0, 0, 0.7); color: white;">
+          <img src="assets/AI.jpeg" alt="Custom AI Chatbot" style="height: 180px;"/>
+          <div class="project-info">
+            <h3>Custom AI Chatbot</h3>
+            <p>Flask & JS chatbot delivering Islamic knowledge with personalized design.</p>
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Flask</span>
+              <span class="tag">JavaScript</span>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script src="script.js"></script>
+  <!-- Experience -->
+  <section id="experience" class="experience-section">
+    <div class="content-card" style="background: rgba(0, 0, 0, 0.7); color: white;">
+      <h2 class="section-title" style="color: white;">Work Experience</h2>
+      <div class="about-text">
+        <h3>React Native Developer Intern — IRMedia Agency, Sargodha</h3>
+        <p>• Developed mobile apps, integrated APIs & built responsive UIs using React Native.</p>
+        <p>• Managed Git version control & collaborated on feature development.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education" class="education-section">
+    <div class="content-card" style="background: rgba(0, 0, 0, 0.7); color: white;">
+      <h2 class="section-title" style="color: white;">Education</h2>
+      <div class="about-text">
+        <h3>BS Software Engineering</h3>
+        <p>FAST National University of Computer and Emerging Sciences (2020–2024)</p>
+        <p><strong>Relevant Coursework:</strong> Data Structures, Database Systems, Software Design & Analysis, SQA, Testing, Web Programming, Mobile Software, Social Networks, Project Management.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact-section">
+    <div class="content-card" style="background: rgba(0, 0, 0, 0.7); color: white;">
+      <h2 class="section-title" style="color: white;">Get In Touch</h2>
+      <div class="contact-container">
+        <div class="contact-info">
+          <h3>Contact Information</h3>
+          <p><i class="fas fa-envelope"></i> rumeshariazsrg@gmail.com</p>
+          <p><i class="fas fa-phone"></i> +92 3107088568</p>
+          <p><i class="fas fa-map-marker-alt"></i> Sargodha, Pakistan</p>
+          <div class="contact-social">
+            <a href="https://github.com/RumeshaRiaz"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/rumesha-riaz-84484423b/"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Rumesha Riaz. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
